@@ -21,7 +21,26 @@ class InstructorsController < ApplicationController
   def show
     @instructor = Instructor.find(params[:id])
     @courses = Course.all
+  end
 
+  def edit
+    @instructor = Instructor.find(params[:id])
+    @courses = Course.all
+  end
+
+  def update
+    @instructor = Instructor.find(params[:id])
+     if @instructor.save(instructor_params)
+       redirect_to instructor_path
+     else
+       render :edit
+     end
+  end
+
+  def destroy
+    @instructor = Instructor.find(params[:id])
+     @instructor.destroy
+      redirect_to root_path
   end
 
   private

@@ -20,7 +20,7 @@
   <tbody>
     <tr>
       <td>
-        <%= course.subject %>
+        <%= link_to course.subject, course_path(course) %>
       </td>
       <td>
         <%= course.instructor %>
