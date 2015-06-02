@@ -1,0 +1,26 @@
+<h1>All Courses</h1>
+<%= link_to "Add Course", new_course_path %>
+<table>
+  <thead>
+    <tr>
+      <th>
+        Courses
+      </th>
+      <th>
+        Instructors
+      </th>
+    </tr>
+  </thead>
+  <% @courses.each do |course| %>
+  <tbody>
+    <tr>
+      <td>
+        <%= course.subject %>
+      </td>
+      <td>
+        <%= course.instructor %>
+      </td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
