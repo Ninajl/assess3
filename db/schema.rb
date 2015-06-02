@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20150602155450) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "classes", force: :cascade do |t|
+  create_table "courses", force: :cascade do |t|
     t.text     "subject"
     t.integer  "student_id"
     t.integer  "instructor_id"
@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 20150602155450) do
     t.datetime "updated_at",    null: false
   end
 
-  add_index "classes", ["instructor_id"], name: "index_classes_on_instructor_id", using: :btree
-  add_index "classes", ["student_id"], name: "index_classes_on_student_id", using: :btree
+  add_index "courses", ["instructor_id"], name: "index_courses_on_instructor_id", using: :btree
+  add_index "courses", ["student_id"], name: "index_courses_on_student_id", using: :btree
 
   create_table "instructors", force: :cascade do |t|
     t.text     "first_name"
