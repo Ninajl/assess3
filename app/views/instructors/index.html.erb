@@ -1,0 +1,9 @@
+<h1>List of Instructors</h1>
+<%= link_to "Link to Students", students_path %>
+<br>
+<br>
+<%= link_to 'Add Instructor', new_instructor_path %>
+<% @instructors.each do |instructor| %>
+
+<li><%= link_to instructor.first_name + " " + instructor.last_name, instructor_path(instructor) %></li>
+<% end %>
