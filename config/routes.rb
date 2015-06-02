@@ -10,7 +10,6 @@ Rails.application.routes.draw do
    resources :students
 
    resources :courses
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

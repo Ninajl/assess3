@@ -1,0 +1,22 @@
+<%= form_for @course do |f| %>
+
+<%= f.label :subject %>
+<%= f.text_field :subject %>
+
+<%= f.collection_select( :instructor_id, Instructor.all, :id, :first_name, {include_blank: "Select Instructor"} )  %>
+
+<%= f.submit %>
+<% end %>
+
+<h1>Add Course to Student</h1>
+
+<%= form_for @course do |f| %>
+
+<%= f.label :subject %>
+<%= f.text_field :subject %>
+
+<%= f.collection_select( :student_id, Student.all, :id, :first_name, {include_blank: "Select Student"} )  %>
+
+<%= f.submit %>
+
+<% end %>
