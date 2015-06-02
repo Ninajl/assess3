@@ -23,7 +23,8 @@
         <%= link_to course.subject, course_path(course) %>
       </td>
       <td>
-        <%= course.instructor %>
+        <%= course.instructor.first_name %> <%= course.instructor.last_name %>
+
       </td>
     </tr>
   </tbody>

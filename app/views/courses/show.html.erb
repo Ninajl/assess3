@@ -1,6 +1,14 @@
 
 <h1><%= @course.subject %> </h1>
 
-<h3> <%= @course.instructor.first_name %></h3>
+<h3>Instructor:<%= @course.instructor.first_name %> <%= @course.instructor.last_name %></h3>
 
-<h4> <%= @course.student.first_name %></h4>
+<p>
+  Students
+</p>
+<% @course.students.each do |student| %>
+<ul><%= @student.first_name %></ul>
+<% end %>
+<%= link_to "Back", courses_path %>
+<%= link_to 'Edit Course', edit_course_path(@course) %>
+<%= link_to 'Delete Course', @course, method: :delete, confirm: 'Are you sure?' %>

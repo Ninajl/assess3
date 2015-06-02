@@ -25,12 +25,11 @@ class InstructorsController < ApplicationController
 
   def edit
     @instructor = Instructor.find(params[:id])
-    @courses = Course.all
   end
 
   def update
     @instructor = Instructor.find(params[:id])
-     if @instructor.save(instructor_params)
+     if @instructor.update(instructor_params)
        redirect_to instructor_path
      else
        render :edit
